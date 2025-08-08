@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
 
     // Simple authentication for demo
     // In production, use proper authentication with hashed passwords
-    if (username === "admin" && password === "admin123") {
+    if (username === "Admin_Mzml/-" && password === "Admin@1122@") {
       // Generate a simple token (in production, use JWT)
       const token = "admin-token-" + Date.now()
 
