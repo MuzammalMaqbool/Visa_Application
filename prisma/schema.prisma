@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Application {
+  id               Int      @id @default(autoincrement())
+  trackingId       String   @unique
+  firstName        String
+  lastName         String
+  email            String
+  phone            String
+  dateOfBirth      DateTime
+  nationality      String
+  passportNumber   String
+  visaType         String
+  purpose          String
+  duration         String
+  address          String
+  city             String
+  country          String
+  postalCode       String
+  occupation       String
+  employer         String?
+  annualIncome     Float?
+  previousVisits   String?
+  criminalRecord   Boolean  @default(false)
+  medicalConditions String?
+  emergencyContact String
+  emergencyPhone   String
+  additionalInfo   String?
+  status           String   @default("pending")
+  notes            String?
+  submittedAt      DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
