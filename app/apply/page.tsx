@@ -67,6 +67,13 @@ export default function ApplyPage() {
 
       if (response.ok) {
         const result = await response.json()
+
+        await fetch("/api/applications/send-mail-to-admin", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+        
         setSuccessMessage(`✅ Application Submitted Successfully! Tracking ID: ${result.trackingId}`)
         toast({
           title: "Application Submitted Successfully!",
